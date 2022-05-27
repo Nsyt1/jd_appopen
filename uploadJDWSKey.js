@@ -93,7 +93,7 @@ try {
       cookieName = '【账号' + cookiesData.length + '】';
       tipPrefix = '首次写入京东 wskey';
       $.needUpload = true;
-      $.tips = `\n如果误用此脚本，App退出账号即可。\n如需上车，联系 https://t.me/id77_GitHub`;
+      $.tips = `\n点击此通知跳转至boxjs`;
     }
     // $.msg(
     //   '用户名: ' + decodeName,
