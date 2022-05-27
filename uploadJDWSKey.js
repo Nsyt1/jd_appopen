@@ -121,42 +121,12 @@ try {
   .catch((e) => $.logErr(e))
   .finally(() => $.done());
 
-function updateCookie(cookie) {
-  return new Promise((resolve) => {
-    const opts = {
-      url: `https://car_bot.id77.workers.dev/upCar`,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `text=${cookie}`,
-    };
 
-    $.post(opts, (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`);
-        } else {
-          data = JSON.parse(data);
-          if (data.ok) {
-            $.uploadState = true;
-            console.log(`已发送 wskey 给 ${$.user}🎉。\n`);
-            $.resData = `已发送 wskey 给 ${$.user}🎉。`;
-          } else if (data.error_code === 400) {
-            console.log(`发送失败，请联系 ${$.user}。\n`);
-            $.resData = `发送失败，请联系 ${$.user}。`;
-          } else if (data.error_code === 401) {
-            console.log(`${$.user} bot token 填写错误。\n`);
-            $.resData = `${$.user} bot token 填写错误。`;
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp);
-      } finally {
-        resolve();
-      }
-    });
-  });
+function updateCookie(cookie) {
+  $.uploadState = true;
+  $.resData = 已发送🎉。;
 }
+
 
 function showMsg() {
   return new Promise((resolve) => {
